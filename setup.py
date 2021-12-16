@@ -31,10 +31,11 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/gsy0911/awsutils",
     packages=setuptools.find_packages(),
-    install_requires=["boto3"],
+    install_requires=["s3fs"],
     license="MIT",
     classifiers=[
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
@@ -43,6 +44,6 @@ setuptools.setup(
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
     ],
-    python_requires=">=3.8",
+    python_requires=">=3.7",
     keywords=["aws"],
 )
