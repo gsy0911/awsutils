@@ -3,22 +3,18 @@ import os
 
 
 def get_version(init_file_path):
-    version_line = list(
-        filter(lambda l: l.startswith('VERSION'), open(init_file_path))
-    )[0]
+    version_line = list(filter(lambda l: l.startswith("VERSION"), open(init_file_path)))[0]
 
     # eval is required to convert from string to tuple,
     # because VERSION defined in __init__.py is tuple
-    version_tuple = eval(version_line.split('=')[-1])
+    version_tuple = eval(version_line.split("=")[-1])
 
     # join with dot
     return ".".join(map(str, version_tuple))
 
 
 # get __version__ from __init__.py
-init = os.path.join(
-    os.path.dirname(__file__), '{your_module}', '__init__.py'
-)
+init = os.path.join(os.path.dirname(__file__), "awsutils", "__init__.py")
 VERSION = get_version(init_file_path=init)
 
 with open("README.md", "r") as fh:
@@ -26,30 +22,27 @@ with open("README.md", "r") as fh:
 
 
 setuptools.setup(
-    name="{your_module}",
+    name="awsutils",
     version=VERSION,
-    author="{your_name}",
-    author_email="{your_email}",
-    description="{description}",
+    author="gsy0911",
+    author_email="yoshiki0911@gmail.com",
+    description="provides utility functions.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="{github_account_etc}",
+    url="https://github.com/gsy0911/awsutils",
     packages=setuptools.find_packages(),
-    install_requires=[
-        "some",
-        "package"
-    ],
+    install_requires=["boto3"],
     license="MIT",
     classifiers=[
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
         "Development Status :: 3 - Alpha",
         "Operating System :: OS Independent",
         "Intended Audience :: Developers",
-        "License :: OSI Approved :: MIT License"
+        "License :: OSI Approved :: MIT License",
     ],
-    python_requires='>=3.6',
-    keywords=["keyword", "here"]
+    python_requires=">=3.8",
+    keywords=["aws"],
 )

@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = '{project_name}'
-copyright = '2020, {author}'
-author = '{author}'
+project = 'awsutils'
+copyright = '2021, gsy0911'
+author = 'gsy0911'
 
 
 # -- General configuration ---------------------------------------------------
